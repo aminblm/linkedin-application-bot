@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Apply Bot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>LinkedIn Apply Bot</h1>
 
+    <form id="applyForm">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required><br>
+
+        <label for="coverLetter">Cover Letter:</label>
+        <textarea id="coverLetter" name="coverLetter" required></textarea><br>
+
+        <input type="submit" value="Apply">
+    </form>
+
+    <script>
+        // Handle form submission
+        $('#applyForm').submit(function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Retrieve form data
+            var jobTitle = $('#jobTitle').val();
+            var coverLetter = $('#coverLetter').val();
+
+            // Perform the apply action (you'll need to implement the logic here)
+            applyToJob(jobTitle, coverLetter);
+        });
+
+        // Function to apply to a job
+        function applyToJob(jobTitle, coverLetter) {
+            // Implement your logic to automate the application process
+            // This could include automating form filling, clicking buttons, etc.
+            // You may use libraries like Puppeteer or Selenium for browser automation
+
+            // Example alert to show successful application
+            alert("Job application for '" + jobTitle + "' submitted successfully!");
+        }
+    </script>
+</body>
+</html>
