@@ -76,15 +76,15 @@ This tutorial briefly explains how to set up LinkedIn Easy Apply jobs bot. With 
 
 1. Install Firefox or Chrome. I was using Firefox for this so I will continue the usage of it on Firefox browser. Process would be similar on Chrome too.
 2. Install Python.
-3. Download Geckodriver put it in Python’s installation folder.
+3. Download [Geckodriver](https://github.com/mozilla/geckodriver/releases) put it in Python’s installation folder.
 4. Install pip, python get-pip.py
 5. Install selenium pip install selenium
 6. Clone the code
 7. Create a profile on Firefox, about:profiles
 8. Launch new profile, go Linkedin.com and log in your account
 9. Copy the root folder of your new profile, to do that type about:profiles on your Firefox search bar, copy the root folder C:\---\your-profile-name.
-10. Paste the root folder on .env file
-11. Modify/adapt the code and run
+10. Paste the root folder on the `config.py` if the `firefoxProfileRootDir` file
+11. Modify/adapt the code and run in `config.py` to preferences.
 12. After each run check the jobs that the bot didn’t apply automatically, apply them manually by saving your preferences
 13. Next time the bot will apply for more jobs based on your saved preferences on Linkedin.
 14. Feel free to contact me for any update/request or question.
