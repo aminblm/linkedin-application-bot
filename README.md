@@ -1,4 +1,4 @@
-# LinkedIn Apply Bot 🤖
+# LinkedIn Application Bot 🤖
 
 ![linkedineasyapplygif](https://user-images.githubusercontent.com/34207598/128695728-6efcb457-0f75-42e2-987a-f7a0c239a235.gif)
 A python bot to apply all Linkedin Easy Apply jobs based on your preferences.
@@ -99,6 +99,7 @@ This tutorial briefly explains how to set up LinkedIn Easy Apply jobs bot. With 
 ## Future Implementations
 
 - Headless browser experience (run the bot without launching the browser)
+- More robustness of the bot for different fields
 - Blacklist offers in Linkedin
 - Output not completed fields in Linkedin
 - Add support to other major job seeking websites (Glassdoor, AngelCo, Greenhouse, Monster, GLobalLogic, djinni)
