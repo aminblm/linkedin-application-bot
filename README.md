@@ -34,7 +34,7 @@ showing how this can be used. To buy, support this project and help me add more 
 
 ## Installation 🔌
 
-- clone the repo `git clone https://github.com/aminblm/EasyApplyJobsBot`
+- clone the repo `git clone https://github.com/aminblm/linkedin-application-bot`
 - Make sure Python and pip is installed
 - Install dependencies with `pip3 install -r requirements.yaml`
 - Either create firefox Profile and put its path on line 8 of config.py or enter your linkedin credentials line 11 and 12 of config.py.
