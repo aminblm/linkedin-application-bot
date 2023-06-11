@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 from utils import prGreen,prRed,prYellow
+import subprocess
+import platform
 
 
 prYellow("ℹ️  This script will check if the bot can automatically log in Linkedin for you.")
@@ -31,17 +33,41 @@ def checkSelenium():
     except ImportError:
         prRed("❌ Selenium not present. Install Selenium: https://pypi.org/project/selenium/")
 
-def checkFirefox():
-    try:
-        import subprocess
-        output = subprocess.check_output(['firefox', '--version'])
-        if(output):
-            prGreen("✅ Firefox is succesfully installed!")
-        else:
-            prRed("❌ Firefox not present. Install firefox: https://www.mozilla.org/en-US/firefox/")
+# def checkFirefox():
+#     try:
+#         import subprocess
+#         output = subprocess.check_output(['firefox', '--version'])
+#         if(output):
+#             prGreen("✅ Firefox is succesfully installed!")
+#         else:
+#             prRed("❌ Firefox not present. Install firefox: https://www.mozilla.org/en-US/firefox/")
 
-    except ImportError as e:
-        prRed(e)
+#     except ImportError as e:
+#         prRed(e)
+
+def check_firefox():
+    try:
+        if sys.platform.startswith('win'):
+            # Windows
+            firefox_path = r'C:\Program Files\Mozilla Firefox\firefox.exe'  # Update with your Firefox path if different
+            command = [firefox_path, '--version']
+        elif sys.platform.startswith('darwin'):
+            # macOS
+            command = ['/Applications/Firefox.app/Contents/MacOS/firefox', '--version']
+        else:
+            # Linux (assumes Firefox is available in the system's PATH)
+            command = ['firefox', '--version']
+
+        # Run the appropriate command to check the version
+        output = subprocess.check_output(command, stderr=subprocess.STDOUT, universal_newlines=True)
+        version = output.strip()
+        if version:
+            print(f"✅ Firefox version {version} is installed!")
+        else:
+            print("❌ Firefox not present. Install Firefox: https://www.mozilla.org/en-US/firefox/")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        print("❌ Firefox not present. Install Firefox: https://www.mozilla.org/en-US/firefox/")
+
 
 def checkSeleniumLinkedin():
 
@@ -86,5 +112,6 @@ def checkSeleniumLinkedin():
 checkPython()
 checkPip()
 checkSelenium()
-checkFirefox()
+# checkFirefox()
+check_firefox()
 checkSeleniumLinkedin()

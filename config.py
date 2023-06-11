@@ -1,3 +1,4 @@
+import os, sys
 # General bot settings
 
 # browser you want the bot to run ex: ["Firefox"], ["Chrome"] choose one only
@@ -6,6 +7,24 @@ browser = ["Firefox"]
 headless = False
 # Optional! for Firefox enter profile dir to run the bot without logging in your account each time
 firefoxProfileRootDir = r""
+
+# If the firefoxProfileRootDir is empty, construct the path dynamically
+if not firefoxProfileRootDir:
+    # Get the user's home directory
+    home_dir = os.path.expanduser("~")
+    
+    # Check the operating system and construct the path based on the platform
+    if sys.platform == "darwin":  # macOS
+        firefoxProfileRootDir = os.path.join(home_dir, "Library", "Application Support", "Firefox")
+    elif sys.platform.startswith("linux"):  # Linux
+        firefoxProfileRootDir = os.path.join(home_dir, ".mozilla", "firefox")
+    elif sys.platform == "win32":  # Windows
+        app_data_dir = os.getenv("APPDATA")
+        firefoxProfileRootDir = os.path.join(app_data_dir, "Mozilla", "Firefox")
+    else:
+        # Unsupported operating system
+        raise OSError("Unsupported operating system: {}".format(sys.platform))
+
 # If you left above field empty enter your Linkedin password and username below
 # Linkedin credits
 email = ""
