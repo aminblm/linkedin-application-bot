@@ -1,6 +1,6 @@
 # LinkedIn Application Bot 🤖
 
-![demo-gif](https://github.com/aminblm/linkedin-application-bot/assets/25132838/26014986-f74d-4628-9508-35befef8e84b)
+![linkedineasyapplygif](https://user-images.githubusercontent.com/34207598/128695728-6efcb457-0f75-42e2-987a-f7a0c239a235.gif)
 
 A python bot to apply all Linkedin Easy Apply jobs based on your preferences.
 
