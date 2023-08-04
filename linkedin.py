@@ -22,7 +22,7 @@ class Linkedin:
                     prYellow("On Linux you need to define profile path to run the bot with Firefox. Go about:profiles find root directory of your profile paste in line 8 of config file next to firefoxProfileRootDir ")
                     exit()
                 else: 
-                    self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+                    self.driver = webdriver.Firefox()
                     self.driver.get("https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin")
                     prYellow("Trying to log in linkedin.")
                     try:    
@@ -35,7 +35,7 @@ class Linkedin:
             else:
                 self.driver = webdriver.Firefox(options=utils.browserOptions(),service=Service(executable_path=GeckoDriverManager().install()))
         elif (browser == "chrome"):
-            self.driver = webdriver.Chrome(ChromeDriverManager().install())
+            self.driver = webdriver.Chrome()
             self.driver.get("https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin")
             prYellow("Trying to log in linkedin.")
             try:    
