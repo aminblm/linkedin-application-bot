@@ -72,8 +72,11 @@ class Linkedin:
 
         for url in urlData:        
             self.driver.get(url)
-
-            totalJobs = self.driver.find_element(By.XPATH,'//small').text 
+            try:
+                totalJobs = self.driver.find_element(By.XPATH,'//small').text 
+            except:
+                print("No Matching Jobs Found")
+                continue
             totalPages = utils.jobsToPages(totalJobs)
 
             urlWords =  utils.urlToKeywords(url)
