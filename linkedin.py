@@ -8,8 +8,6 @@ from utils import prRed,prYellow,prGreen
 
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
 
 class Linkedin:
     def __init__(self):
@@ -33,7 +31,7 @@ class Linkedin:
                     except Exception as e: 
                         prRed(e)
             else:
-                self.driver = webdriver.Firefox(options=utils.browserOptions(),service=Service(executable_path=GeckoDriverManager().install()))
+                self.driver = webdriver.Firefox()
         elif (browser == "chrome"):
             self.driver = webdriver.Chrome()
             self.driver.get("https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin")
@@ -152,7 +150,7 @@ class Linkedin:
             prYellow("Category: " + urlWords[0] + "," +urlWords[1]+ " applied: " + str(countApplied) +
                   " jobs out of " + str(countJobs) + ".")
         
-        utils.donate(self)
+        # utils.donate(self)
 
     def getJobProperties(self, count):
         textToWrite = ""
