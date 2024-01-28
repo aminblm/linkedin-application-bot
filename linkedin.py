@@ -6,9 +6,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from utils import prRed,prYellow,prGreen
 
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-
 class Linkedin:
     def __init__(self):
         browser = config.browser[0].lower()
@@ -31,7 +28,7 @@ class Linkedin:
                     except Exception as e: 
                         prRed(e)
             else:
-                self.driver = webdriver.Firefox()
+                self.driver = webdriver.Firefox(options=utils.browserOptions())
         elif (browser == "chrome"):
             self.driver = webdriver.Chrome()
             self.driver.get("https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin")
