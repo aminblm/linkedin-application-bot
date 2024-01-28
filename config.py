@@ -3,7 +3,7 @@
 # browser you want the bot to run ex: ["Firefox"], ["Chrome"] choose one only
 browser = ["Firefox"]
 # Optional! run browser in headless mode, no browser screen will be shown it will work in background.
-headless = False
+headless = True
 # Optional! for Firefox enter profile dir to run the bot without logging in your account each time
 firefoxProfileRootDir = r""
 # If you left above field empty enter your Linkedin password and username below
@@ -17,19 +17,19 @@ LinkedinBotProPasswrod = ""
 # continent locations:["Europe", "Asia", "Australia", "NorthAmerica", "SouthAmerica", "Africa", "Australia"]
 location = ["European Economic Area"]
 # keywords related with your job search
-keywords = ["chief technical officer", "cto", "python", "frontend", "react","javascript", "vue", "python", "programming", "typescript", "blockchain"]
+keywords = ["lead developer", "chief technical officer", "cto", "python"]
 # keywords = ["programming"]
 #job experience Level - ex:  ["Internship", "Entry level" , "Associate" , "Mid-Senior level" , "Director" , "Executive"]
-experienceLevels = ["Internship", "Entry level" , "Associate" , "Mid-Senior level" , "Director" , "Executive"]
+experienceLevels = ["Mid-Senior level" , "Director" , "Executive"]
 #job posted date - ex: ["Any Time", "Past Month" , "Past Week" , "Past 24 hours"] - select only one
-datePosted = ["Any Time", "Past Month" , "Past Week" , "Past 24 hours"]
+datePosted = ["Past 24 hours"]
 # datePosted = ["Past 24 hours"]
 #job type - ex:  ["Full-time", "Part-time" , "Contract" , "Temporary", "Volunteer", "Intership", "Other"]
 jobType = ["Full-time", "Part-time" , "Contract"]
 #remote  - ex: ["On-site" , "Remote" , "Hybrid"]
 remote = ["On-site" , "Remote" , "Hybrid"]
 #salary - ex:["$40,000+", "$60,000+", "$80,000+", "$100,000+", "$120,000+", "$140,000+", "$160,000+", "$180,000+", "$200,000+" ] - select only one
-salary = [ "$80,000+"]
+salary = [""]
 #sort - ex:["Recent"] or ["Relevent"] - select only one
 sort = ["Recent"]
 #Blacklist companies you dont want to apply - ex: ["Apple","Google"]
